@@ -1,9 +1,11 @@
 #' Handling large datasets with dplyr
-#'  @example
+#' @example
 #' library("dplyr")
 #' library("ggplot2")
-#' visualize_airpart_delays()
-visualize_airpart_delays <- function(){
+#' library("nycflights13")
+#' visualize_airport_delays()
+#' @export
+visualize_airport_delays <- function(){
   data("airports")
   data("flights")
   airports_filter <- filter(airports, dst == "A")
