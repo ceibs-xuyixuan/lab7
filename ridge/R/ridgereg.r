@@ -6,12 +6,13 @@
 #' @field data A data.frame
 #' @field bhat A matrix
 #' @field yhat A matrix
+#' @field lambda A numeric
 #' @examples 
 #' ridgereg1 <- ridgereg(formula = Petal.Length ~ Species, data = iris)
 #' ridgereg1$print()
 #' ridgereg1$coeff()
 #' ridgereg1$pred()  
-#' ## We decide to use QR decompositon.
+## We decide to use QR decompositon.
 ridgereg <- setRefClass("rigdereg",
                       fields=list(formula="formula", 
                                   data = "data.frame", 

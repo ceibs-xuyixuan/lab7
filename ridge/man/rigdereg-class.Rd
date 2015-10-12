@@ -26,12 +26,13 @@ Function for ridge regression
 \item{\code{bhat}}{A matrix}
 
 \item{\code{yhat}}{A matrix}
+
+\item{\code{lambda}}{A numeric}
 }}
 \examples{
 ridgereg1 <- ridgereg(formula = Petal.Length ~ Species, data = iris)
 ridgereg1$print()
 ridgereg1$coeff()
 ridgereg1$pred()
-## We decide to use QR decompositon.
 }
 
