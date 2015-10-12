@@ -1,5 +1,8 @@
-library("dplyr")
-library("ggplot2")
+#' Handling large datasets with dplyr
+#'  @example
+#' library("dplyr")
+#' library("ggplot2")
+#' visualize_airpart_delays()
 visualize_airpart_delays <- function(){
   data("airports")
   data("flights")
