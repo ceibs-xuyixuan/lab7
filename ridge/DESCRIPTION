@@ -3,8 +3,17 @@ Type: Package
 Title: What the package does (short line)
 Version: 1.0
 Date: 2015-10-12
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: Violeta and Yixuan
+Maintainer: yixuan<yixxu916@student.liu.se>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
-Suggests: testthat
+License: GPL-2 | GPL-3
+Depends: R (>= 3.1.0)
+Suggests: testthat,
+          knitr,
+          devtools,
+          roxygen2,
+          rmarkdown
+Imports: dplyr,
+         ggplot2,
+         nycflights13
+         caret
