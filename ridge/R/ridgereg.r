@@ -26,6 +26,7 @@ ridgereg <- setRefClass("rigdereg",
                           .self$data <- data
                           X <- model.matrix(formula, data)
                           y <- data[,all.vars(formula)[1]]
+                          set.seed(5284589)
                           .self$lambda <- runif(1, 0, 0.01)
                           X_norm <- X
                           for(i in 2:ncol(X)){
@@ -50,7 +51,7 @@ ridgereg <- setRefClass("rigdereg",
                           t(.self$bhat)
                         },
                         
-                        coeff = function(){
+                        coef = function(){
                           writeLines("Coefficientes:")
                           return(c(.self$bhat[1],.self$bhat[2], .self$bhat[3]))
                         },
