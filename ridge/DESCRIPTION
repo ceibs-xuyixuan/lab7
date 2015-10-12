@@ -15,5 +15,5 @@ Suggests: testthat,
           rmarkdown
 Imports: dplyr,
          ggplot2,
-         nycflights13
+         nycflights13,
          caret
