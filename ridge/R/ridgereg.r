@@ -21,13 +21,13 @@ ridgereg <- setRefClass("rigdereg",
                                   lambda = "numeric"),
                       
                       methods = list(
-                        initialize = function(formula, data){
+                       methods = list(
+                        initialize = function(formula, data, lambda){
                           .self$formula <- formula
                           .self$data <- data
                           X <- model.matrix(formula, data)
                           y <- data[,all.vars(formula)[1]]
-                          set.seed(5284589)
-                          .self$lambda <- runif(1, 0, 0.01)
+                          .self$lambda <- lambda
                           X_norm <- X
                           for(i in 2:ncol(X)){
                             X_norm[,i] <- (X[,i] - mean(X[,i])) / sqrt(var(X[,i]))
