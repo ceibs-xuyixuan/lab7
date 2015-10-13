@@ -1,10 +1,9 @@
 #' Handling large datasets with dplyr
-#' @example
+#' @examples
 #' library("dplyr")
 #' library("ggplot2")
 #' library("nycflights13")
 #' visualize_airport_delays()
-#' @export
 visualize_airport_delays <- function(){
   data("airports")
   data("flights")
@@ -17,6 +16,6 @@ visualize_airport_delays <- function(){
   flights_select <- select(flights_filter, one_of(c("dest", "dep_delay", "arr_delay")))
   all_dest <- inner_join(flights_select, airports_select, by =c("dest" = "faa"))
   a <- summarise(group_by(all_origin, dest), m=mean(dep_delay, na.rm = TRUE), lat=mean(lat), lon=mean(lon))
-  q <- ggplot(a, aes(x= lat, y =lon))+geom_point()+geom_text(aes(label=m),hjust=0, vjust=0)
+  q <- ggplot(a, aes(x= lon, y =lat))+geom_point()+geom_text(aes(label=m),hjust=0, vjust=0)
   return(q)
 }
