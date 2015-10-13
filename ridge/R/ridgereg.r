@@ -10,7 +10,7 @@
 #' @examples 
 #' ridgereg1 <- ridgereg(formula = Petal.Length ~ Species, data = iris)
 #' ridgereg1$print()
-#' ridgereg1$coeff()
+#' ridgereg1$coef()
 #' ridgereg1$pred()  
 ## We decide to use QR decompositon.
 ridgereg <- setRefClass("rigdereg",
